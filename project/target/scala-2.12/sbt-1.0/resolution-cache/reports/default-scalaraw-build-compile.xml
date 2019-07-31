@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="scalaraw-build"
+		revision="0.1.0-SNAPSHOT"
+		extra-scalaVersion="2.12"
+		extra-sbtVersion="1.0"
+		conf="compile"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20190731012655"/>
+	<dependencies>
+		<module organisation="org.scala-native" name="sbt-scala-native">
+			<revision name="0.3.9" status="release" pubdate="20190423163714" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-native.org" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="no" details="" size="1958" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/scala_2.12/sbt_1.0/org.scala-native/sbt-scala-native/ivy-0.3.9.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-native/sbt-scala-native/scala_2.12/sbt_1.0/0.3.9/ivys/ivy.xml"/>
+				<caller organisation="default" name="scalaraw-build" conf="compile" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<artifacts>
+					<artifact name="sbt-scala-native" type="jar" ext="jar" status="no" details="" size="222856" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/scala_2.12/sbt_1.0/org.scala-native/sbt-scala-native/jars/sbt-scala-native-0.3.9.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-native/sbt-scala-native/scala_2.12/sbt_1.0/0.3.9/jars/sbt-scala-native.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.portable-scala" name="sbt-platform-deps">
+			<revision name="1.0.0-M2" status="release" pubdate="20171031234505" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/portable-scala/sbt-platform-deps" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="8">
+				<license name="BSD 3-Clause" url="https://github.com/portable-scala/sbt-platform-deps/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2440" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/scala_2.12/sbt_1.0/org.portable-scala/sbt-platform-deps/ivy-1.0.0-M2.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.portable-scala/sbt-platform-deps/scala_2.12/sbt_1.0/1.0.0-M2/ivys/ivy.xml"/>
+				<caller organisation="org.scala-native" name="sbt-scala-native" conf="compile" rev="1.0.0-M2" rev-constraint-default="1.0.0-M2" rev-constraint-dynamic="1.0.0-M2" callerrev="0.3.9" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<artifacts>
+					<artifact name="sbt-platform-deps" type="jar" ext="jar" status="no" details="" size="15052" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/scala_2.12/sbt_1.0/org.portable-scala/sbt-platform-deps/jars/sbt-platform-deps-1.0.0-M2.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.portable-scala/sbt-platform-deps/scala_2.12/sbt_1.0/1.0.0-M2/jars/sbt-platform-deps.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-native" name="test-runner_2.12">
+			<revision name="0.3.9" status="release" pubdate="20190423164427" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-native.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="no" details="" size="2958" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/test-runner_2.12/ivy-0.3.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-native/test-runner_2.12/0.3.9/test-runner_2.12-0.3.9.pom"/>
+				<caller organisation="org.scala-native" name="sbt-scala-native" conf="compile" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="test-runner_2.12" type="jar" ext="jar" status="no" details="" size="105337" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/test-runner_2.12/jars/test-runner_2.12-0.3.9.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-native/test-runner_2.12/0.3.9/test-runner_2.12-0.3.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-sbt" name="test-interface">
+			<revision name="1.0" status="release" pubdate="20130629004435" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-sbt.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<license name="BSD" url="https://github.com/sbt/test-interface/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2589" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-sbt/test-interface/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.pom"/>
+				<caller organisation="org.scala-native" name="test-runner_2.12" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="test-interface" type="jar" ext="jar" status="no" details="" size="14755" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-sbt/test-interface/jars/test-interface-1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-native" name="tools_2.12">
+			<revision name="0.3.9" status="release" pubdate="20190423164143" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-native.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="2">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="no" details="" size="3325" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/tools_2.12/ivy-0.3.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-native/tools_2.12/0.3.9/tools_2.12-0.3.9.pom"/>
+				<caller organisation="org.scala-native" name="sbt-scala-native" conf="compile" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<caller organisation="org.scala-native" name="test-runner_2.12" conf="default, compile, runtime, master" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="tools_2.12" type="jar" ext="jar" status="no" details="" size="616414" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/tools_2.12/jars/tools_2.12-0.3.9.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-native/tools_2.12/0.3.9/tools_2.12-0.3.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-native" name="nir_2.12">
+			<revision name="0.3.9" status="release" pubdate="20190423164054" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-native.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="no" details="" size="2789" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/nir_2.12/ivy-0.3.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-native/nir_2.12/0.3.9/nir_2.12-0.3.9.pom"/>
+				<caller organisation="org.scala-native" name="tools_2.12" conf="default, compile, runtime, master" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="nir_2.12" type="jar" ext="jar" status="no" details="" size="463438" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/nir_2.12/jars/nir_2.12-0.3.9.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-native/nir_2.12/0.3.9/nir_2.12-0.3.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-native" name="util_2.12">
+			<revision name="0.3.9" status="release" pubdate="20190423164401" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-native.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="no" details="" size="2648" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/util_2.12/ivy-0.3.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-native/util_2.12/0.3.9/util_2.12-0.3.9.pom"/>
+				<caller organisation="org.scala-native" name="tools_2.12" conf="default, compile, runtime, master" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<caller organisation="org.scala-native" name="nir_2.12" conf="compile, runtime" rev="0.3.9" rev-constraint-default="0.3.9" rev-constraint-dynamic="0.3.9" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="util_2.12" type="jar" ext="jar" status="no" details="" size="44668" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-native/util_2.12/jars/util_2.12-0.3.9.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-native/util_2.12/0.3.9/util_2.12-0.3.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-sbt" name="global-plugins">
+			<revision name="0.0" status="integration" pubdate="20190731012651" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
+				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
+				<caller organisation="default" name="scalaraw-build" conf="compile" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.12.7" status="release" pubdate="20180927103542" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2471" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.pom"/>
+				<caller organisation="org.scala-native" name="test-runner_2.12" conf="default, compile, runtime, master" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.3.9"/>
+				<caller organisation="org.scala-native" name="util_2.12" conf="compile, runtime" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.3.9"/>
+				<caller organisation="org.scala-native" name="tools_2.12" conf="default, compile, runtime, master" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.3.9"/>
+				<caller organisation="org.scala-native" name="nir_2.12" conf="compile, runtime" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.3.9"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5277511" time="0" location="/Users/pabloperezgarcia/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
