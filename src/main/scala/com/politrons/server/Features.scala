@@ -17,6 +17,7 @@ import scala.util.Try
   * As you can see in this example Scala-native is perfectly fine to execute regular Scala code as you would do in "Just-in-time" mode.
   */
 object Features extends App {
+
   runC_Code()
   regularOutput()
   collections()
@@ -33,6 +34,8 @@ object Features extends App {
     cStringAPI
     cTypeAPI
     cStdLibAPI
+//    cStructs
+//    cFunctionPointers
   }
 
   /**
@@ -94,6 +97,20 @@ object Features extends App {
     println("Random value3 " + rand3)
   }
 
+//  private def cFunctionPointers(): Unit = Zone { implicit z =>
+//    val value = CFunctionPtr.fromFunction0(() => "Hello function pointer")
+//    println(value.apply())
+//  }
+
+//  private def cStructs: Unit = Zone { implicit z =>
+//    type Vec3 = CStruct3[Double, Double, Double]
+//    val vec = stackalloc[Vec3] // allocate c struct on stack
+//    !vec._1 = 10.0 // initialize fields
+//    !vec._2 = 20.0
+//    !vec._3 = 30.0
+//    //    println(vec._1.cast[Double])
+//  }
+
 
   /**
     * Here we show how using [cast] implicit extension we can cast all scala types into C types.
@@ -113,7 +130,7 @@ object Features extends App {
     println(s"C string: $cString")
 
     val stringCByImplicit = c"hello C string using c implicit"
-    println("C string:" + stringCByImplicit)
+    println("C string:" + fromCString(stringCByImplicit))
 
   }
 
