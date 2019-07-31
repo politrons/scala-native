@@ -1,7 +1,6 @@
 package com.politrons.server
 
-import scala.scalanative.native.{CStruct2, name, _}
-import scala.scalanative.posix.time
+import scala.scalanative.native._
 import scala.util.Try
 
 /**
@@ -17,7 +16,7 @@ import scala.util.Try
   *
   * As you can see in this example Scala-native is perfectly fine to execute regular Scala code as you would do in "Just-in-time" mode.
   */
-object Main extends App {
+object Features extends App {
   runC_Code()
   regularOutput()
   collections()
