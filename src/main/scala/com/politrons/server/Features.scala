@@ -23,6 +23,7 @@ object Features extends App {
   collections()
   forComprehension()
 
+
   /**
     * Using [scalanative] we're able to execute C code in Scala.
     * Here we show how we can use the C standard libs that you can find here.
@@ -34,8 +35,8 @@ object Features extends App {
     cStringAPI
     cTypeAPI
     cStdLibAPI
-//    cStructs
-//    cFunctionPointers
+    cStruct
+    cFunctionPointers
   }
 
   /**
@@ -56,6 +57,10 @@ object Features extends App {
 
     val copyString: CString = string.strcpy(toCString(""), toCString("Copy this text from one pointer to another please"))
     println(fromCString(copyString))
+
+
+    val lenCString = c"How long is this string?"
+    println("Size of String:" + string.strlen(lenCString).cast[Long])
 
   }
 
@@ -97,19 +102,28 @@ object Features extends App {
     println("Random value3 " + rand3)
   }
 
-//  private def cFunctionPointers(): Unit = Zone { implicit z =>
-//    val value = CFunctionPtr.fromFunction0(() => "Hello function pointer")
-//    println(value.apply())
-//  }
+  private def cFunctionPointers = Zone { implicit z =>
+    //    val value: CFunctionPtr1[Int, CString] = CFunctionPtr.fromFunction1[Int, CString](arg => c"Hello function pointer")
+    //    println(fromCString(value.apply(1)))
+  }
 
-//  private def cStructs: Unit = Zone { implicit z =>
-//    type Vec3 = CStruct3[Double, Double, Double]
-//    val vec = stackalloc[Vec3] // allocate c struct on stack
-//    !vec._1 = 10.0 // initialize fields
-//    !vec._2 = 20.0
-//    !vec._3 = 30.0
-//    //    println(vec._1.cast[Double])
-//  }
+  /**
+    * One of the coolest features that we can use from C is the use of [Struct], just like in Go this Data type
+    * are really handy to type values with multiple types inside.
+    * In order to create one CStruct we use [stackalloc]  to allocate c struct on stack
+    * and create a pointer of that type  [Ptr[CStruct3[Double, String, Int], then we initialize the fields in the pointer.
+    */
+  private def cStruct: Unit = Zone { implicit z =>
+    type Vec3 = CStruct3[Double, String, Int]
+    val vec: Ptr[CStruct3[Double, String, Int]] = stackalloc[Vec3] //
+    !vec._1 = 10.0
+    !vec._2 = "Hello Struct world"
+    !vec._3 = 30
+    println("Struct first element:" + !vec._1)
+    println("Struct second element:" + !vec._2)
+    println("Struct third element:" + !vec._3)
+
+  }
 
 
   /**
