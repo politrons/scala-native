@@ -37,7 +37,6 @@ object Features extends App {
     cStdLibAPI
     cStruct
     cStackAllocToCreatePointerTypes
-    cFunctionPointers
   }
 
   /**
@@ -109,11 +108,6 @@ object Features extends App {
     stdio.printf(toCString("Random value1 %d \n"), rand1)
     stdio.printf(toCString("Random value2 %d \n"), rand2)
     println("Random value3 " + rand3)
-  }
-
-  private def cFunctionPointers = Zone { implicit z =>
-    //    val value: CFunctionPtr1[Int, CString] = CFunctionPtr.fromFunction1[Int, CString](arg => c"Hello function pointer")
-    //    println(fromCString(value.apply(1)))
   }
 
   /**
