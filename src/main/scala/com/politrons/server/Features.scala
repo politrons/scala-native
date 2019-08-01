@@ -36,6 +36,7 @@ object Features extends App {
     cTypeAPI
     cStdLibAPI
     cStruct
+    cStackAllocToCreatePointerTypes
     cFunctionPointers
   }
 
@@ -48,6 +49,8 @@ object Features extends App {
     * We aso have to make the conversion from Scala types to C types to interoperate, we can use for string [toCString]
     */
   private def cStringAPI = Zone { implicit z =>
+    println("STRING API")
+    println("----------------------")
 
     val cString: Ptr[CChar] = toCString("From Scala string to C and back again")
     println(fromCString(cString))
@@ -72,6 +75,9 @@ object Features extends App {
     * * [isupper] to check if character is upper case
     */
   private def cTypeAPI = Zone { implicit z =>
+    println("CTYPE API")
+    println("----------------------")
+
     var isAlphanumeric = ctype.isalnum(63.cast[CInt]) //63 ascii ?
     println("? Is isAlphanumeric:" + isAlphanumeric.cast[Int]) //Should be 0 false
     isAlphanumeric = ctype.isalnum(97.cast[CInt]) //97 ascii "a"
@@ -93,6 +99,9 @@ object Features extends App {
     * Also to use [printf] of C we can use [stdio]
     */
   private def cStdLibAPI = Zone { implicit z =>
+    println("STDLIB API")
+    println("----------------------")
+
     val rand1 = stdlib.rand()
     val rand2 = stdlib.rand()
     val rand3 = stdlib.rand().cast[Int]
@@ -114,6 +123,9 @@ object Features extends App {
     * and create a pointer of that type  [Ptr[CStruct3[Double, String, Int], then we initialize the fields in the pointer.
     */
   private def cStruct: Unit = Zone { implicit z =>
+    println("STRUCT")
+    println("----------------------")
+
     type Vec3 = CStruct3[Double, String, Int]
     val vec: Ptr[CStruct3[Double, String, Int]] = stackalloc[Vec3] //
     !vec._1 = 10.0
@@ -122,9 +134,20 @@ object Features extends App {
     println("Struct first element:" + !vec._1)
     println("Struct second element:" + !vec._2)
     println("Struct third element:" + !vec._3)
-
   }
 
+  def cStackAllocToCreatePointerTypes: Unit = {
+    println("STACK ALLOC TYPES ")
+    println("----------------------")
+
+    val ptrString = stackalloc[CString]
+    !ptrString = c"Hello String world in C"
+    println(fromCString(!ptrString))
+
+    val structPtr = stackalloc[CStruct1[CString]]
+    !structPtr._1 = c"C String in struct"
+    println(fromCString(!structPtr._1))
+  }
 
   /**
     * Here we show how using [cast] implicit extension we can cast all scala types into C types.
